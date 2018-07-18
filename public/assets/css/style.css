@@ -1,0 +1,503 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+video { 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 88%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  transition: 1s opacity;
+}
+
+.name {
+	background-color: transparent;
+	font-size: 120px;
+  font-family: 'Arvo', serif;
+  color: #f46804;
+	text-align: center;
+	margin: 70px 200px 40px 200px;
+/*	padding-bottom: 100px;
+*/}
+
+.button-row {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+.button-row > div {
+  position: relative;
+  width: 160px;
+  height: 50px;
+  margin: 0 15px;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  perspective: 1000px;
+}
+.button-row > div > a {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(-25px);
+  -moz-transform: translateZ(-25px);
+  -ms-transform: translateZ(-25px);
+  -o-transform: translateZ(-25px);
+  transform: translateZ(-25px);
+  -webkit-transition: -webkit-transform 0.25s;
+  -moz-transition: -moz-transform 0.25s;
+  transition: transform 0.25s;
+}
+.button-row > div > a::before, .button-row > div > a::after {
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 160px;
+  height: 50px;
+  position: absolute;
+  border: 5px solid black;
+  box-sizing: border-box;
+  content: attr(title);
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.button-row > div > a::before {
+  background-color: #000;
+  color: #fff;
+  -webkit-transform: rotateY(0deg) translateZ(25px);
+  -moz-transform: rotateY(0deg) translateZ(25px);
+  -ms-transform: rotateY(0deg) translateZ(25px);
+  -o-transform: rotateY(0deg) translateZ(25px);
+  transform: rotateY(0deg) translateZ(25px);
+}
+.button-row > div > a::after {
+  background-color: #fff;
+  border-color: #000;
+  color: #000;
+  -webkit-transform: rotateX(90deg) translateZ(25px);
+  -moz-transform: rotateX(90deg) translateZ(25px);
+  -ms-transform: rotateX(90deg) translateZ(25px);
+  -o-transform: rotateX(90deg) translateZ(25px);
+  transform: rotateX(90deg) translateZ(25px);
+}
+.button-row > div > a:hover {
+  -webkit-transform: translateZ(-25px) rotateX(-90deg);
+  -moz-transform: translateZ(-25px) rotateX(-90deg);
+  -ms-transform: translateZ(-25px) rotateX(-90deg);
+  -o-transform: translateZ(-25px) rotateX(-90deg);
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+
+/* this is just icing */
+body {
+  font-family: "Oswald", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 18pt;
+/*  text-transform: uppercase;
+*/  padding: 0;
+  margin: 0;
+}
+
+.main, h1 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50%ss;
+}
+
+html, body, .main {
+  height: 100px;
+}
+
+
+.modal {
+    display: none;  Hidden by default 
+    position: fixed;  Stay in place 
+    z-index: 1;  Sit on top 
+    left: 0;
+    top: 0;
+    width: 100%;  Full width 
+    height: 100%;  Full height 
+    overflow: auto;  Enable scroll if needed 
+    background-color: rgb(0,0,0);  Fallback color 
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Header */
+.modal-header {
+    padding: 2px 8px;
+    background-color: #f46804;
+    color: white;
+    height: 40px;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;
+border-radius: 25px;
+margin-top: 10px;
+}
+
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 25%;
+    height: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top: -300px; opacity: 0} 
+    to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+#Sign {
+	text-align: center;
+	padding-top: 10px;
+  font-family: 'Arvo', serif;
+	font-weight: bold;
+  text-transform: uppercase;
+}
+
+.form {
+	margin-top: 20px;
+}
+
+.emailInput {
+	width: 90%;
+	height: 25px;
+	margin-bottom: 35px;
+	margin-top: 25px;
+}
+
+.passInput {
+	width: 90%;
+	height: 25px;
+	margin-top: 25px;
+}
+
+
+.modal {
+	height: 300px;
+	border-radius: 25px;
+	opacity: 1;
+}
+
+
+
+.modal-content {
+	height: 400px;
+}
+
+.submit {
+    background-color: #f46804;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 15px 2px 10px 20px;
+    cursor: pointer;
+
+}
+
+#modalDiv1 {
+	position: absolute;;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vw;
+	background: rgba(255, 255, 255, 0.5);
+	opacity: 0.5;
+	display: none;
+
+}
+
+#bandName {
+	font-size: 100px;
+	background-color: transparent;
+	margin: 20px 30px 20px 30px;
+  font-family: 'Arvo', serif;
+  color: #f46804;
+}
+
+#bandPic {
+	height: 250px;
+	width: 250px;
+  margin: 10px 10px 10px 10px;
+float: left;
+}
+
+#biosummary {
+ margin: 10px 10px 10px 10px;
+ color: white;
+ }
+
+#bio {
+	/*display: flex;
+  flex-wrap: wrap;*/
+
+	width: 60%;
+	height: 350px;
+	margin: 20px 0px 20px 30px;
+	border: none;
+	overflow-y: scroll;
+}
+
+#tickets {
+	display: flex;
+	width: 55%;
+	height: 350px;
+	margin: 20px 20px 20px 30px;
+	border: 3px solid white;
+	font-size: 14pt;
+  overflow: hidden;
+  color: white;
+
+}
+
+#topTwo {
+	display: inline-flex;
+
+}
+
+#slick {
+	text-align: center;
+	color: white;
+	border-width: 3px solid white;
+	background-color: transparent;
+	margin: 0;
+  height: 400px;
+}
+
+#openDiv {
+	text-align: center;
+	font size: 50px;
+	color: white;
+/*	border-width: 3px solid white;
+*/	background-color: transparent;
+	height: 275px;
+	margin: 20px 20px 20px 30px;
+	width: 48%;
+  height: 350px;
+}
+
+#myBands {
+	text-align: center;
+	font size: 50px;
+	border-width: 3px solid black;
+	background-color: transparent;
+	height: 275px;
+	margin: 20px 20px 20px 30px;
+	width: 40%;
+}
+
+#artistTable {
+
+  /*margin-left: 70px;*/
+  border: none;
+  margin: auto;
+}
+#mybands {
+  font-family: 'Arvo', serif;
+      font-weight: bold;
+      font-size: 55px;
+      color: #f46804;
+      margin-bottom: 14px;
+      text-align: center;
+}
+
+/*td {
+	border: 1px solid white;
+  margin-right: 12px;
+}*/
+#btm2 {
+	display: flex;
+	justify-content: space-between;
+}
+#navBrand {
+  font-family: 'Arvo', serif;
+  color: #f46804;
+
+}
+
+#tm {
+  text-align: center;
+  font-size: 25px;
+  margin: 20px 0 0 30px;
+  }
+
+  .slick-track {
+
+  }
+
+  #slick {
+
+  }
+
+ /* #artistbutton {
+
+    background-color: transparent;
+    margin-top: 30px;
+    margin-right:  25px;
+  }*/
+
+  #artname {
+      font-family: 'Arvo', serif;
+      font-weight: bold;
+      font-size: 105px;
+
+
+  }
+
+  #jukebox {
+    font-family: 'Arvo', serif;
+      font-weight: bold;
+      font-size: 45px;
+      color: #f46804;
+
+  }
+
+  #resultz {
+    font-family: 'Arvo', serif;
+      font-weight: bold;
+      font-size: 45px;
+      color: #f46804;
+  }
+
+.artistbutton {
+      font-family: 'Arvo', serif;
+      font-size: 25px;
+      color: #f46804;
+      background-color: transparent;
+      margin: 15px 20px 5px 0;
+      border: none;
+}
+
+.save {
+  font-size: 25px;
+      color: #f46804;
+      background-color: transparent;
+      border: none;
+}
+
+
+
+#art {
+  text-align: center;
+}
+
+#remove {
+  text-align: center;
+
+}
+
+#artistTable {
+  border: none;
+}
+
+td {
+  border: none;
+}
+
+.remove {
+  background-color: transparent;
+        color: #f46804;
+        border: none;
+
+}
+
+#tickets td {
+  padding-right: 20px;
+  color: red;
+  padding-top: 10px;
+  color: #f46804;
+  margin-left: 50px;S
+}
+
+#tickets {
+  border: none;
+}
+
+#mybands .artistbutton {
+  margin-left: 100px;
+}
+#slick {
+  height: 300px;
+}
+
+#loginError,
+#createError {
+  color: red;
+  font-style: italic;
+  font-size: 10px;
+}

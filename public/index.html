@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<html>
+		<head>
+			<title>bandtogether.</title>
+			<meta charset="UTF-8">
+			
+			<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+			<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		   
+
+			<script
+			src="https://code.jquery.com/jquery-3.2.1.js"
+			integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+			crossorigin="anonymous">
+			</script>
+
+			<link href="https://fonts.googleapis.com/css?family=Arvo|New+Rocker|Sedgwick+Ave+Display" rel="stylesheet">
+      
+			<!--<script type="text/javascript" src="assets/javascript/apiskeleton.js"></script>-->
+			<link href="https://fonts.googleapis.com/css?family=New+Rocker|Rock+Salt|Sedgwick+Ave+Display" rel="stylesheet">
+			<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+		</head> 
+
+
+
+		<body>
+			<video loop autoplay muted width="320" height="240">
+				<source src="assets/images/crowd.mp4" type='video/mp4'>
+				Your browser does not support the video tag.
+			</video>
+			
+			<div class="sitename">
+				<p class="name">bandtogether.</p>
+			</div>
+			
+			<div class="main">
+				
+				<div class="button-row">
+					<div><a rel="nofollow" rel="noreferrer" title="Sign In !" id="myBtn"></a></div>
+					<div><a rel="nofollow" rel="noreferrer" title="Sign Up !" id="myBtn2"></a></div>
+				</div>
+			</div>
+			<div container id="modalDiv1">
+				<!-- The Modal -->
+				
+			</div>
+			<div id="myModal" class="modal">
+					<!-- Modal content -->
+					<div class="modal-content">
+						<div class="modal-header">
+							<span class="close">&times;</span>
+							<h2 id="Sign">SIGN IN !</h2>
+						</div>
+						<div class="modal-body">
+								Email:<br>
+								<input id='email' type="text" name="Email" class="emailInput" ><br>
+								Password:<br>
+								<input id='password' type="password" name="Password" class="passInput" >
+						</div>
+						<input id='signIn' type="button" class="submit" value="Sign In!">
+						<div id='loginError'></div>
+					</div>
+				</div>
+			<!-- <div container id="modalDiv2">
+				
+			</div> -->
+			<div id="myModal2" class="modal">
+					<!-- Modal content -->
+					<div class="modal-content">
+						<div class="modal-header">
+							<span class="close">&times;</span>
+							<h2 id="Sign">SIGN UP NOW !</h2>
+						</div>
+						<div class="modal-body">
+								Email:<br>
+								<input id='createEmail' type="text" name="Email" class="emailInput" ><br>
+								Password:<br>
+								<input id='createPassword' type="password" name="Password" class="passInput" >
+								Confirm Password:<br>
+								<div id='createError'></div>
+								<input id='confirmPassword' type="password" name="Password" class="passInput" >
+						</div>
+						<input id='create' type="button" class="submit" value="Sign Me Up!">
+					</div>
+				</div>
+			<script src= "assets/javascript/java.js"></script>
+					
+
+		</body>
+	</html>
